@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+</head>
+<body style="color:Yellow; background-color:Black">
+    @if (ViewBag.except == 1)
+    {<p> Такое имя уже есть, попробуйте еще раз </p>}
+
+
+    <div>
+        <h3>Регистрация</h3>
+        <form method="post">
+            <!-- <input type="hidden" value="55" name="Id" />  -->
+
+            <table>
+                <tr>
+                    <td>Имя:</td>
+                    <td><input type="text" name="Name" /> </td>
+                </tr>
+                <tr>
+                    <td>Пароль:</td>
+                    <td><input type="text" name="Pass" /></td>
+                </tr>
+
+                <tr><td> <input type="submit" value="Регистрация" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

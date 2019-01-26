@@ -1,0 +1,21 @@
+﻿@using messenger.Models
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Messenger</title>
+    <meta http-equiv="refresh" content="10">
+
+</head>
+
+<body style="color:Yellow; background-color:Black">
+    <div>
+    </div>
+    @foreach (string item in FileSupport.Read())
+    {
+        <p> @item </p>
+    }
+</body>
+
+</html>

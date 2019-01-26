@@ -1,0 +1,34 @@
+﻿
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+        <!-- Тег meta для указания кодировки -->
+        <meta charset="utf-8">
+        <title>Messenger</title>
+    </head>
+
+    <body style="color:Yellow; background-color:Black">
+
+        <table border="1" cellspacing="5" cellpadding="12">
+            <tr>
+                <td valign="top" width="2000" height="450">
+                    <p>История сообщений: </p>
+                       <iframe src="https://localhost:44352/Home/storage" width="100%" height="360" frameborder="1"> </iframe>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" height="100">
+                    <div style="color:Black;">
+                        <form name="message" method="post">
+                            <input type="hidden" name="Name" value="@ViewBag.myuser.Name" />
+                            Введите сообщение: <br />
+                            <!-- <input name="mess" type="text" required size="185" maxlength="200" value="" /> <br />  -->
+                            <p><textarea name="mess" cols="160" rows="3"></textarea></p>
+                            <input type="submit" name="enter" value="Отправить" />
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

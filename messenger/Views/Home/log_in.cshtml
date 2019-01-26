@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Авторизация</title>
+</head>
+<body style="color:Yellow; background-color:Black">
+    @if (ViewBag.except == 1)
+    {<p> Имя не найдено, попробуйте еще раз </p>}
+    @if (ViewBag.except == 2)
+    {<p> Неправильный пароль, попробуйте еще раз </p>}
+
+
+    <table border="0" cellspacing="5" cellpadding="12">
+        <tr>
+            <td valign="top" width="2000" height="500" style="vertical-align: middle">
+                <center>
+                    <h2>Авторизация</h2>
+                    <form method="post">
+                        <table>
+                            <tr>
+                                <td>Имя:</td>
+                                <td><input type="text" name="Name" /> </td>
+                            </tr>
+                            <tr>
+                                <td>Пароль:</td>
+                                <td><input type="text" name="Pass" /></td>
+                            </tr>
+
+                            <tr><td> <input type="submit" value="Вход" /> </td><td></td></tr>
+                        </table>
+                    </form>
+                </center>
+            </td>
+       </tr>
+    </table>
+
+    <!--
+        <center>
+
+            <h2>Авторизация</h2>
+            <form method="post">
+                <table>
+                    <tr>
+                        <td>Имя:</td>
+                        <td><input type="text" name="Name" /> </td>
+                    </tr>
+                    <tr>
+                        <td>Пароль:</td>
+                        <td><input type="text" name="Pass" /></td>
+                    </tr>
+
+                    <tr><td> <input type="submit" value="Вход" /> </td><td></td></tr>
+                </table>
+            </form>
+        </center>   -->
+    </body>
+</html>
+
