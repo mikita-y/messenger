@@ -11,6 +11,7 @@ namespace messenger.Controllers
 {
     public class HomeController : Controller
     {
+        //eah
         //User my;
         public HomeController()
         {
