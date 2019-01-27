@@ -33,10 +33,11 @@ namespace messenger.Controllers
             FileSupport.Writing(user, mess);
             return View();
         }
-
+        // new comment
 
         public IActionResult log_in()
         {
+            int a;
             return View();
         }
         [HttpPost]
