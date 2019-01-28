@@ -11800,11 +11800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\0.project\\c_sharp\\messenger\\messenger\\messenger.csproj",
+      "projectUniqueName": "D:\\0.0.0\\messenger\\messenger\\messenger.csproj",
       "projectName": "messenger",
-      "projectPath": "D:\\0.project\\c_sharp\\messenger\\messenger\\messenger.csproj",
+      "projectPath": "D:\\0.0.0\\messenger\\messenger\\messenger.csproj",
       "packagesPath": "C:\\Users\\Никита\\.nuget\\packages\\",
-      "outputPath": "D:\\0.project\\c_sharp\\messenger\\messenger\\obj\\",
+      "outputPath": "D:\\0.0.0\\messenger\\messenger\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
