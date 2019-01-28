@@ -11,5 +11,6 @@ namespace messenger.Models
             Name = name;
             Pass = pass;
         }
+        public User(){}
     }
 }
