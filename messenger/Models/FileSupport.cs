@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace messenger.Models
 {
-    public delegate void Del();
 
     public class FileSupport
     {
         public static List<string> Read()
         {
-            string readPath = @"D:\0.project\storage\ID.txt";
+            string readPath = @"wwwroot\storage.txt";
             StreamReader sr = new StreamReader(readPath);
             List<string> text = new List<string>();
             while (!sr.EndOfStream)
@@ -22,16 +19,13 @@ namespace messenger.Models
             sr.Close();
             return text;
         }
-
-        public static void Writing(User user, string mess)
+        public static void Writing(string name, string mess)
         {
-            string writePath = @"D:\0.project\storage\ID.txt";
-            string text = DateTime.Now.ToString("t") + " " + user.Name + ": " + mess;
+            string writePath = @"wwwroot\storage.txt";
+            string text = DateTime.Now.ToString("M") + " " + DateTime.Now.ToString("t") + " " + name + ": " + mess;
             StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default);
             sw.WriteLine(text);
             sw.Close();
         }
     }
 }
-
-    

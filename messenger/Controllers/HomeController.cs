@@ -1,45 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using messenger.Models;
-using System.IO;
 
 namespace messenger.Controllers
 {
     public class HomeController : Controller
     {
-        //eah
-        //hueah
-        //User my;
-        public HomeController()
-        {
-        }
         public IActionResult Index()
         {
             return View();
         }
-        
-        public IActionResult window(User user)
-        {
-            ViewBag.myuser = user;
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult window(User user, string mess)
-        {
-            ViewBag.myuser = user;
-            FileSupport.Writing(user, mess);
-            return View();
-        }
-        // new comment
 
         public IActionResult log_in()
         {
-            int a;
             return View();
         }
         [HttpPost]
@@ -57,8 +30,7 @@ namespace messenger.Controllers
                 ViewBag.except = 2;
                 return View();
             }
-            user = DBsupport.GetUser(user.Name);
-           
+            user.Pass = "";
             return RedirectToActionPermanent("window", user);
         }
 
@@ -66,7 +38,6 @@ namespace messenger.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult registration(User user)
         {
@@ -78,22 +49,26 @@ namespace messenger.Controllers
                 return View();
             }
             DBsupport.add(user.Name, user.Pass);
-            User my = DBsupport.GetUser(user.Name);
-            return RedirectToActionPermanent("window", my);
+            user.Pass = "";
+            return RedirectToActionPermanent("window", user);
         }
 
+        public IActionResult window(User user)
+        {
+            ViewBag.name = user.Name;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult window(string name, string mess)
+        {
+            ViewBag.name = name;
+            FileSupport.Writing(name, mess);
+            return View();
+        }
         public PartialViewResult storage()
         {
             return PartialView();
         }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

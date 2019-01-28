@@ -1,33 +1,52 @@
-﻿@{
-}
-
-
+﻿
 <!DOCTYPE HTML>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Messenger</title>
+    <style>
+        .licat {
+            border: 1px solid #c4c4c4;
+            border-radius: 3px;
+            padding: 0 5px 2px 5px;
+            color: #fff;
+            background: #0033FF;
+            -webkit-transition: background 1s ease;
+        }
+        .licat:hover {
+            background: #EFEFEF;
+        }
+        a.licat:hover {
+            color: #0000CC;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 
-<body style="color:Yellow; background-color:Black">
-    <br><br><br>
-    <center>
-        <h1>Messenger </h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        <table>
-            <tr>
-                <td><a href="~/Home/log_in"><h3>Авторизоваться</h3></a></td>
-            </tr>
-            <tr>
-                <td><a href="~/Home/registration"><h3>Зарегистрироваться</h3></a></td>
-            </tr>
-        </table>
-    </center>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
+<body style="color:Yellow; background-color:black; background: url(/images/bg.jpg); background-size: cover;">
+    <table border="0" cellspacing="5" cellpadding="12">
+        <tr>
+            <td valign="top" width="2000" height="500" style="vertical-align: middle">
+                <center>
+                    <big><big><h1>Messenger </h1></big></big>
+                    <table>
+                        <tr>
+                            <td><center><h2><a href="~/Home/log_in" class="licat">Авторизоваться</a></h2></center></td>
+                        </tr>
+                        <tr>
+                            <td><h2><a href="~/Home/registration" class="licat">Зарегистрироваться</a></h2></td>
+                        </tr>
+                    </table>
+
+                </center>
+            </td>
+        </tr>
+
+    </table>
+
 </body>
 
 </html>

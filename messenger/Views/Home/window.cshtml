@@ -1,34 +1,51 @@
-﻿
-    <!DOCTYPE HTML>
-    <html>
-    <head>
-        <!-- Тег meta для указания кодировки -->
-        <meta charset="utf-8">
-        <title>Messenger</title>
-    </head>
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Messenger</title>
+    <style>
+        .licat {
+            border: 1px solid #c4c4c4;
+            border-radius: 3px;
+            padding: 0 5px 2px 5px;
+            color: #fff;
+            background: #8b00ff;
+            -webkit-transition: background 1s ease;
+            width: 80px;
+            height: 80px;
+            font-size: 60px
+        }
+    .licat:hover {
+    background: #EFEFEF;
+    }
+    input.licat:hover {
+    color: #0000CC;
+    }
+    </style>
+</head>
+<body style="color:Yellow; background-color:black; background: url(/images/bg.jpg); background-size: cover;">
 
-    <body style="color:Yellow; background-color:Black">
-
-        <table border="1" cellspacing="5" cellpadding="12">
-            <tr>
-                <td valign="top" width="2000" height="450">
-                    <p>История сообщений: </p>
-                       <iframe src="https://localhost:44352/Home/storage" width="100%" height="360" frameborder="1"> </iframe>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top" height="100">
-                    <div style="color:Black;">
-                        <form name="message" method="post">
-                            <input type="hidden" name="Name" value="@ViewBag.myuser.Name" />
-                            Введите сообщение: <br />
-                            <!-- <input name="mess" type="text" required size="185" maxlength="200" value="" /> <br />  -->
-                            <p><textarea name="mess" cols="160" rows="3"></textarea></p>
-                            <input type="submit" name="enter" value="Отправить" />
-                        </form>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </body>
+    <table border="0" cellspacing="5" cellpadding="10">
+        <tr>
+            <td valign="top" width="2000" height="440">
+                <p>История сообщений: </p>
+                <iframe src="https://localhost:44352/Home/storage" width="100%" height="407" frameborder="0"> </iframe>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" height="120">
+                 <form name="message" method="post">
+                      <input type="hidden" name="name" value="@ViewBag.name" />
+                       Введите сообщение: <br />
+                     <table cellpadding="3">
+                         <tr>
+                             <td><textarea name="mess" cols="132" rows="4" style="font-size:16px; color:Yellow; background-color:transparent"></textarea></td>
+                             <td><center><input type="submit" name="enter" value="✔" class="licat" /></center></td>
+                         </tr>
+                     </table>
+                 </form>
+            </td>
+        </tr>
+    </table>
+</body>
 </html>

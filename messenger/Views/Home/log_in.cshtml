@@ -1,62 +1,62 @@
-﻿@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Авторизация</title>
+    <style>
+        .licat {
+            border: 1px solid #c4c4c4;
+            border-radius: 3px;
+            padding: 0 5px 2px 5px;
+            color: #fff;
+            background: #0033FF;
+            -webkit-transition: background 1s ease;
+            width: 100px;
+            height: 30px;
+            font-size: 23px
+        }
+        .licat:hover {
+            background: #EFEFEF;
+        }
+        input.licat:hover {
+            color: #0000CC;
+        }
+    </style>
 </head>
-<body style="color:Yellow; background-color:Black">
-    @if (ViewBag.except == 1)
-    {<p> Имя не найдено, попробуйте еще раз </p>}
-    @if (ViewBag.except == 2)
-    {<p> Неправильный пароль, попробуйте еще раз </p>}
-
+<body style="color:Yellow; background: url(/images/bg.jpg); background-size: cover;">
 
     <table border="0" cellspacing="5" cellpadding="12">
         <tr>
-            <td valign="top" width="2000" height="500" style="vertical-align: middle">
+            <td valign="top" width="2000" height="515" style="vertical-align: middle">
                 <center>
-                    <h2>Авторизация</h2>
+                    <h1 style="font-size: 250%">Авторизация</h1>
                     <form method="post">
-                        <table>
-                            <tr>
-                                <td>Имя:</td>
-                                <td><input type="text" name="Name" /> </td>
+                        <table width="400" border="0">
+                            <tr style="font-size: 200%">
+                                <td align="right">Имя:</td>
+                                <td align="left"><input type="text" name="Name" style="width: 200px; height: 30px; font-size:20px" /></td>
                             </tr>
-                            <tr>
-                                <td>Пароль:</td>
-                                <td><input type="text" name="Pass" /></td>
+                            <tr style="font-size: 200%">
+                                <td align="right">Пароль:</td>
+                                <td align="left"><input type="text" name="Pass" style="width: 200px; height: 30px; font-size:20px" /></td>
                             </tr>
-
-                            <tr><td> <input type="submit" value="Вход" /> </td><td></td></tr>
+                            <tr><td colspan="2" align="center"><input type="submit" value="Вход" class="licat" /></td><td></td></tr>
                         </table>
                     </form>
                 </center>
             </td>
-       </tr>
+        </tr>
+        <tr>
+            <td align="center">
+                @if (ViewBag.except == 1)
+                {<p> Имя не найдено, попробуйте еще раз </p>}
+                @if (ViewBag.except == 2)
+                {<p> Неправильный пароль, попробуйте еще раз </p>}
+            </td>
+        </tr>
     </table>
 
-    <!--
-        <center>
+    
 
-            <h2>Авторизация</h2>
-            <form method="post">
-                <table>
-                    <tr>
-                        <td>Имя:</td>
-                        <td><input type="text" name="Name" /> </td>
-                    </tr>
-                    <tr>
-                        <td>Пароль:</td>
-                        <td><input type="text" name="Pass" /></td>
-                    </tr>
-
-                    <tr><td> <input type="submit" value="Вход" /> </td><td></td></tr>
-                </table>
-            </form>
-        </center>   -->
-    </body>
+</body>
 </html>
 

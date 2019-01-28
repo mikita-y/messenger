@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace messenger.Models
 {
@@ -12,8 +9,7 @@ namespace messenger.Models
         {
             SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-UV7D341\SQLEXPRESS;Initial Catalog=messenger;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             SqlCommand search = connect.CreateCommand();
-            string namef = @"'" + name + @"'";
-            search.CommandText = @"SELECT Pass FROM Users WHERE Login = " + namef;
+            search.CommandText = @"SELECT Pass FROM Users WHERE Login = '" + name + @"'";
             connect.Open();
             string pass = "";
             using (SqlDataReader reader = search.ExecuteReader())
@@ -23,7 +19,7 @@ namespace messenger.Models
                 {
                     pass = string.Format(reader.GetString(0));
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     return pass;
                 }
@@ -34,9 +30,8 @@ namespace messenger.Models
         public static void add(string name, string pass)
         {
             SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-UV7D341\SQLEXPRESS;Initial Catalog=messenger;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-            int num = 111;
-            var cmd = new SqlCommand("INSERT INTO [Users] ([number], [Login], [Pass]) VALUES (@num, @login, @pass)", connect);
-            cmd.Parameters.AddWithValue("@num", num);
+            
+            var cmd = new SqlCommand("INSERT INTO [Users] ( [Login], [Pass]) VALUES (@login, @pass)", connect);
             cmd.Parameters.AddWithValue("@login", name);
             cmd.Parameters.AddWithValue("@pass", pass);
             connect.Open();
@@ -65,8 +60,6 @@ namespace messenger.Models
                 reader.Read();
                 user.Id = reader.GetInt32(0);
             }
-
-
             connect.Close();
             return user;
         }
